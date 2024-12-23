@@ -36,7 +36,6 @@ We'll create the following tables in the data warehouse:
 #### 1. Extract Data
 Extract data from the source tables.
 
-```sql
 -- Extract data from Students table
 SELECT * FROM OperationalDB.Students;
 
@@ -45,7 +44,6 @@ SELECT * FROM OperationalDB.Courses;
 
 -- Extract data from Grades table
 SELECT * FROM OperationalDB.Grades;
-```
 
 #### 2. Transform Data
 Transform the data by cleaning, aggregating, and joining.
@@ -53,7 +51,6 @@ Transform the data by cleaning, aggregating, and joining.
 **Transform Grades Data:**
 Join `Grades` with `Students` and `Courses` to get student and course details.
 
-```sql
 WITH GradesData AS (
     SELECT 
         g.GradeID,
@@ -70,7 +67,6 @@ WITH GradesData AS (
     JOIN OperationalDB.Courses c ON g.CourseID = c.CourseID
 )
 SELECT * FROM GradesData;
-```
 
 **Transform Students Data:**
 Ensure student names are consistent.
