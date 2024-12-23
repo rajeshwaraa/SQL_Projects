@@ -51,7 +51,7 @@ Transform the data by cleaning, aggregating, and joining.
 **Transform Grades Data:**
 Join `Grades` with `Students` and `Courses` to get student and course details.
 
-WITH GradesData AS (
+    WITH GradesData AS (
     SELECT 
         g.GradeID,
         g.StudentID,
@@ -67,7 +67,7 @@ WITH GradesData AS (
     JOIN OperationalDB.Courses c ON g.CourseID = c.CourseID
 )
 SELECT * FROM GradesData;
-
+    
 **Transform Students Data:**
 Ensure student names are consistent.
 
